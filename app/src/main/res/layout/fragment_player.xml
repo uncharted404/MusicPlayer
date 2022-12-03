@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".fragment.PlayerFragment">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+    >
+
+        <ImageView
+                android:id="@+id/image_album"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/nothing"
+        />
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="歌曲名称"
+                android:maxLines="2"
+                android:textSize="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="50dp"/>
+
+
+        <Button
+                android:id="@+id/btn_like"
+                android:onClick="like"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/like"
+                android:layout_marginRight="50dp"
+                android:layout_gravity="end"
+        />
+
+        <LinearLayout
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            <SeekBar
+                    android:id="@+id/sb_thumb"
+                    android:thumb="@drawable/thumb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                <TextView
+                        android:id="@+id/tv_cur_time"
+                        android:layout_width="wrap_content"
+                        android:text="00:00"
+                        android:layout_height="wrap_content"
+                />
+
+                <TextView
+                        android:id="@+id/tv_total_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="00:00"
+                />
+            </RelativeLayout>
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+                <Button
+                        android:id="@+id/btn_order"
+                        android:onClick="changeOrder"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/order_single"
+                />
+
+                <Button
+                        android:id="@+id/btn_prior"
+                        android:onClick="prior"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/play_previous"
+                />
+                <Button
+                        android:id="@+id/btn_play"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:onClick="play"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/play"
+                />
+
+                <Button
+                        android:id="@+id/btn_next"
+                        android:onClick="next"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/play_next"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

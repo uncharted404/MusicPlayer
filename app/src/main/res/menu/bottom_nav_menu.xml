@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_player"
+
+        android:title="播放器"
+    />
+    <item
+            android:id="@+id/menu_like"
+
+            android:title="我的喜欢"
+    />
+</menu>
