@@ -137,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (size == 0){
             Toast.makeText(this, "你还未收藏歌曲", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         switch (GlobalConstant.order){
