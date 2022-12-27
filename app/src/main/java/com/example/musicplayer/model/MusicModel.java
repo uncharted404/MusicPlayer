@@ -2,7 +2,6 @@ package com.example.musicplayer.model;
 
 import android.app.Application;
 import android.os.Looper;
-import android.util.Log;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;

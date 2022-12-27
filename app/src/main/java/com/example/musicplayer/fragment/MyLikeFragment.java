@@ -6,34 +6,26 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.musicplayer.R;
-import com.example.musicplayer.activity.MainActivity;
-import com.example.musicplayer.activity.SearchActivity;
 import com.example.musicplayer.adapter.MyLikeListAdapter;
-import com.example.musicplayer.adapter.MySearchListAdapter;
-import com.example.musicplayer.client.MusicClient;
+import com.example.musicplayer.service.MusicService;
 import com.example.musicplayer.factory.SingletonFactory;
 import com.example.musicplayer.model.MusicModel;
 import com.example.musicplayer.pojo.Music;
 import com.example.musicplayer.pojo.MusicInfo;
 import com.example.musicplayer.utils.GlobalConstant;
 import com.example.musicplayer.utils.MyMPlayer;
-import com.squareup.picasso.Picasso;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -138,7 +130,7 @@ public class MyLikeFragment extends Fragment {
     }
 
     private void playMusicBySongId(int songId) {
-        MusicClient musicClient = retrofit.create(MusicClient.class);
+        MusicService musicClient = retrofit.create(MusicService.class);
         Call<MusicInfo> call = musicClient.getMusicInfoById(songId, "netease", "name");
         call.enqueue(new Callback<MusicInfo>() {
 

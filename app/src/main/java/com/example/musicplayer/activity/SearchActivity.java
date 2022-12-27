@@ -10,7 +10,7 @@ import com.example.musicplayer.adapter.MySearchListAdapter;
 import com.example.musicplayer.factory.SingletonFactory;
 import com.example.musicplayer.pojo.MusicInfo;
 import com.example.musicplayer.pojo.Music;
-import com.example.musicplayer.client.MusicClient;
+import com.example.musicplayer.service.MusicService;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -49,7 +49,7 @@ public class SearchActivity extends AppCompatActivity {
 
     //获得音乐列表数据、展示
     private void showMusicInfo(String search) {
-        MusicClient musicClient = retrofit.create(MusicClient.class);
+        MusicService musicClient = retrofit.create(MusicService.class);
         Call<MusicInfo> call = musicClient.getMusicInfo(search, "netease", "name");
         call.enqueue(new Callback<MusicInfo>() {
 

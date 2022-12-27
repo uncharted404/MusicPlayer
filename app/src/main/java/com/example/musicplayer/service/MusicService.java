@@ -1,10 +1,10 @@
-package com.example.musicplayer.client;
+package com.example.musicplayer.service;
 
 import com.example.musicplayer.pojo.MusicInfo;
 import retrofit2.Call;
 import retrofit2.http.*;
 
-public interface MusicClient {
+public interface MusicService {
     @POST("/")
     @FormUrlEncoded
     @Headers({

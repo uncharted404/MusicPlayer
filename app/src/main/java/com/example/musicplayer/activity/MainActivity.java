@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Handler;
-import android.os.Looper;
 import android.os.Message;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import com.example.musicplayer.R;
 import com.example.musicplayer.adapter.MyFSPAdapter;
-import com.example.musicplayer.client.MusicClient;
+import com.example.musicplayer.service.MusicService;
 import com.example.musicplayer.factory.SingletonFactory;
 import com.example.musicplayer.fragment.MyLikeFragment;
 import com.example.musicplayer.fragment.PlayerFragment;
@@ -38,7 +37,6 @@ import retrofit2.Retrofit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
@@ -217,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void playMusicBySongId(int songId) {
-        MusicClient musicClient = retrofit.create(MusicClient.class);
+        MusicService musicClient = retrofit.create(MusicService.class);
         Call<MusicInfo> call = musicClient.getMusicInfoById(songId, "netease", "name");
         call.enqueue(new Callback<MusicInfo>() {
 
